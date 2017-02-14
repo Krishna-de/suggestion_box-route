@@ -1,0 +1,26 @@
+
+<div class="main">   
+    <div class="col-sm-12">
+        <div ng-repeat="post in posts">
+            <h3>{{post.title}}</h3>
+
+                <p> 
+                    <span class="glyphicon glyphicon-plus-sign" ng-click="upVote($index)"></span> Upvotes: {{post.upvotes}}
+                       <a href="#/comment/{{post.id}}" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-comment"></span> {{ comments.getLengthOfComment(post.$id) }}</a>
+                </p> 
+
+        </div>
+        <form class="frm" ng-submit="addSuggestion()" style="margin-top: 50px">
+            <h4 style="color:pink;"> Submit Your Suggestion </h4>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Great ideas here" ng-model="title"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Suggest</button>
+        
+        </form>
+ </br>
+    </div>
+</div>
+
+

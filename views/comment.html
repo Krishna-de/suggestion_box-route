@@ -1,0 +1,27 @@
+<div class="panel panel-info" style="margin-top: 50px;">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+      <p><a class="btn btn-default" href="javascript:history.go(-1)">
+          <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a> {{title}}</p>
+	</div>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="comment in post.comments">
+        <h4 tyle="color:gold;font-weight: bold;">{{comment.body}}</h4>
+        <p style="color:green;"><span class="glyphicon glyphicon-plus-sign" ng-click="upVote(comment, $index)"></span>Up Votes: {{comment.upvotes}} </p></li>
+    <li class="list-group-item">
+
+		<form ng-submit="addComment()" style="margin-top: 15px; color:green">
+		<div class="form-group">
+
+		<!--<input type="text" class="form-control" placeholder="add a comment, press enter" ng-model="comment"></input>-->
+		        <input type="text" class="form-control" placeholder="Comment" ng-model="body"></input>
+
+		</div>
+    		<button type="submit" class="btn btn-primary">Comment</button>
+        
+		</form>
+
+    </li>
+  </ul>
+</div>
